@@ -1,0 +1,35 @@
+﻿@model Producto
+@{
+    ViewData["Title"] = "Producto";
+}
+
+<div>
+    @ViewBag.Accion
+</div>
+
+<form asp-action="GuardarCambios" method="post">
+
+    <input asp-for="IdProducto" type="hidden" />
+
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input asp-for="Nombre" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Descripcion</label>
+        <input asp-for="Descripcion" class="form-control">
+    </div>
+    <div>
+        <label>Cantidad</label>
+        <input asp-for="Cantidad" class="form-control">
+    </div>
+    <div class="row">
+        <div class="col-6 col-md-6">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="col-6">
+            <a asp-action="Index" class="btn btn-outline-secondary">Regresar</a>
+        </div>
+    </div>
+
+</form>
